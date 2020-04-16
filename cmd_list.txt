@@ -1,0 +1,3 @@
+base_cmds=git,shellcheck
+macos_cmds=gnu-sed,proxychains-ng
+macos_brew_casks=v2rayu
