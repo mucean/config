@@ -2,7 +2,7 @@
 set my_path \
 "$HOME/.cargo/bin" \
 
-if ! set -q mac_path
+if set -q mac_path
     set my_path $my_path $mac_path
 end
 
