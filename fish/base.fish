@@ -1,6 +1,9 @@
 
+set -x COMPOSER_HOME "$HOME/.composer"
+
 set my_path \
 "$HOME/.cargo/bin" \
+"$COMPOSER_HOME/vendor/bin" \
 
 if set -q mac_path
     set my_path $my_path $mac_path
@@ -21,6 +24,7 @@ bind \cf forward-word
 set -x LC_ALL en_US.UTF-8
 set -x DROPBOX_PATH "$HOME/Dropbox"
 set -x DATE_FORMAT '+%Y-%m-%d %H:%M:%S'
+set -x GOPROXY "http://goproxy.io/"
 
 if command -s powerline-daemon >/dev/null 2>&1
     powerline-daemon -q

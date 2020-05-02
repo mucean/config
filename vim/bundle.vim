@@ -2,65 +2,84 @@ if &shell =~# 'fish$'
     set shell=/bin/bash
 endif
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" after install need run command: call mkdp#util#install()
-Plugin 'iamcco/markdown-preview.nvim'
-
-Plugin 'cespare/vim-toml'
-Plugin 'stephpy/vim-yaml'
-Plugin 'elzr/vim-json'
-
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'dag/vim-fish'
-
-Plugin 'vim-syntastic/syntastic'
-
-Plugin 'jiangmiao/auto-pairs'
-
-Plugin 'morhetz/gruvbox'
-
-Plugin 'tpope/vim-fugitive'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" if len(filter(split(&rtp, ','), 'v:val =~? "vim-markdown"')) > 0 | echo 'yes' | endif
-
-let g:rtp_list = split(&rtp, ',')
 function! PluginLoaded(plu)
-    "return len(filter(g:rtp_list, 'v:val =~? a:plu')) > 0
     return len(filter(split(&rtp, ','), 'v:val =~? a:plu')) > 0
 endfunction
+
+set nocompatible              " be iMproved, required
+filetype on
+syntax on
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+filetype plugin indent on
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+
+"Plug 'junegunn/vim-plug'
+
+" after install need run command: call mkdp#util#install()
+Plug 'iamcco/markdown-preview.nvim'
+
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'elzr/vim-json'
+
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+
+Plug 'dag/vim-fish'
+
+Plug 'vim-syntastic/syntastic'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'morhetz/gruvbox'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" spell check
+Plug 'reedes/vim-lexical'
+
+Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+
+"Plug 'govim/govim', { 'for': ['go'] }
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+call plug#end()
+
+Plug 'ycm-core/YouCompleteMe', { 'on': [] }
+
+let plugins = ["nerdtree", "ctrlp.vim"]
+
+if exists('$confdir')
+    for plu in plugins
+        if PluginLoaded(plu)
+            let $pluConf = $confdir . "/plugins/" . plu . ".vim"
+            source $pluConf
+        endif
+    endfor
+
+    augroup load_complete
+        autocmd!
+        "au BufNewFile,BufRead *.go call plug#load('govim') | source $confdir/plugins/govim.vim | autocmd! load_complete
+        "au BufNewFile,BufRead *.?,*.g[^o]*,*.go?*,*.[^g]* source $confdir/plugins/youcompleteme.vim | call plug#load('YouCompleteMe') | autocmd! load_complete
+        au BufNewFile,BufRead * if !PluginLoaded("govim") | source $confdir/plugins/youcompleteme.vim | call plug#load('YouCompleteMe') | endif | autocmd! load_complete
+    augroup end
+endif
 
 if PluginLoaded("vim-markdown")
     let g:vim_markdown_folding_disabled = 1
@@ -97,7 +116,7 @@ if PluginLoaded("syntastic")
     let g:syntastic_check_on_wq = 0
 
 
-    let g:syntastic_sh_shellcheck_args = "-P /Users/liuhf/.common-shell"
+    let g:syntastic_sh_shellcheck_args = "-P $HOME/.common-shell"
 endif
 
 if PluginLoaded("auto-pairs")
@@ -120,4 +139,20 @@ endif
 if PluginLoaded("gruvbox")
     colorscheme gruvbox
     set background=dark
+endif
+
+if PluginLoaded("ultisnips")
+    "let g:UltiSnipsExpandTrigger="<c-s>"
+    let g:UltiSnipsExpandTrigger="<Leader>se"
+    let g:UltiSnipsJumpForwardTrigger="<Leader>sn"
+    let g:UltiSnipsJumpBackwardTrigger="<Leader>sp"
+endif
+
+if PluginLoaded("vim-lexical")
+    augroup lexical
+        autocmd!
+        autocmd FileType markdown,mkd call lexical#init()
+        autocmd FileType go,php call lexical#init()
+    augroup END
+    let g:lexical#spell = 1         " 0=disabled, 1=enabled
 endif

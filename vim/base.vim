@@ -1,4 +1,5 @@
-filetype on
+autocmd BufWritePost ~/.vimrc so ~/.vimrc
+
 syntax on
 "syntax enable
 set nu
@@ -18,3 +19,5 @@ inoremap <C-H> <LEFT>
 inoremap <C-J> <DOWN>
 inoremap <C-K> <UP>
 inoremap <C-L> <RIGHT>
+
+"let mapleader = ","
