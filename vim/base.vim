@@ -20,4 +20,6 @@ inoremap <C-J> <DOWN>
 inoremap <C-K> <UP>
 inoremap <C-L> <RIGHT>
 
+set completeopt=menu
+
 "let mapleader = ","
