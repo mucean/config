@@ -131,8 +131,8 @@ if PluginLoaded("auto-pairs")
         let g:AutoPairsShortcutJump = '∆' " <m-j>
         let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
     else
-        let g:AutoPairsShortcutFastWrap = <m-w>
-        let g:AutoPairsShortcutJump = <m-j>
+        let g:AutoPairsShortcutFastWrap = '<m-w>'
+        let g:AutoPairsShortcutJump = '<m-j>'
     endif
 endif
 

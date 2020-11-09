@@ -24,8 +24,11 @@ bind \cf forward-word
 set -x LC_ALL en_US.UTF-8
 set -x DROPBOX_PATH "$HOME/Dropbox"
 set -x DATE_FORMAT '+%Y-%m-%d %H:%M:%S'
-set -x GOPROXY "http://goproxy.io/"
+#set -x GOPROXY "https://goproxy.io/"
+set -x GOPROXY "https://goproxy.cn/"
 
 if command -s powerline-daemon >/dev/null 2>&1
     powerline-daemon -q
 end
+
+set -g fish_user_paths "/usr/local/opt/python@3.7/bin" $fish_user_paths
