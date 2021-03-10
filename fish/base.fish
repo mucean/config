@@ -27,8 +27,9 @@ set -x DATE_FORMAT '+%Y-%m-%d %H:%M:%S'
 #set -x GOPROXY "https://goproxy.io/"
 set -x GOPROXY "https://goproxy.cn/"
 
-if command -s powerline-daemon >/dev/null 2>&1
+if command -s powerline-daemon >/dev/null 2>&1 && test (count (ps -ef | grep powerline-daemon)) -ne 2
     powerline-daemon -q
 end
 
-set -g fish_user_paths "/usr/local/opt/python@3.7/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
