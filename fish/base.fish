@@ -31,5 +31,5 @@ if command -s powerline-daemon >/dev/null 2>&1 && test (count (ps -ef | grep pow
     powerline-daemon -q
 end
 
-set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+#set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
+#set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
