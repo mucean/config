@@ -46,7 +46,7 @@ Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
