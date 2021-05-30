@@ -12,19 +12,11 @@ source "$HOME/.common-shell/preload.sh"
 
 echo "" > config.fish
 
-if is_macos; then
-    cat macos_config_before.fish >> config.fish
-fi
-
 if [ -f "./local_before.fish" ]; then
     cat "./local_before.fish" >> config.fish
 fi
 
 cat base.fish >> config.fish
-
-if is_macos; then
-    cat macos_config_after.fish >> config.fish
-fi
 
 if [ -f "./local_after.fish" ]; then
     cat "./local.after.fish" >> config.fish
