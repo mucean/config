@@ -59,6 +59,8 @@ Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 Plug 'ycm-core/YouCompleteMe', { 'on': [] }
