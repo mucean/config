@@ -1,1 +1,1 @@
-let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_map = '<Leader>f'

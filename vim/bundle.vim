@@ -24,7 +24,7 @@ call plug#begin('~/.vim/bundle')
 "Plug 'junegunn/vim-plug'
 
 " after install need run command: call mkdp#util#install()
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
