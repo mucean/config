@@ -1,0 +1,8 @@
+#!/bin/bash
+
+leftwm-command "UnloadTheme"
+
+# delete file of down temporary
+if [ -f "/tmp/leftwm-theme-down"  ]; then
+   rm /tmp/leftwm-theme-down
+fi
