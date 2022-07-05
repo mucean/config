@@ -835,10 +835,10 @@ key_bindings:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-  - { key: K,       mods: Control,   chars: "\x1b[A"}
-  - { key: J,       mods: Control,   chars: "\x1b[B"}
-  - { key: L,       mods: Control,   chars: "\x1b[C"}
-  - { key: H,       mods: Control,   chars: "\x1b[D"}
+  #- { key: K,       mods: Control,   chars: "\x1b[A"}
+  #- { key: J,       mods: Control,   chars: "\x1b[B"}
+  #- { key: L,       mods: Control,   chars: "\x1b[C"}
+  #- { key: H,       mods: Control,   chars: "\x1b[D"}
   - { key: P,       mods: Control,   chars: "\x0c"}
 
 #debug:

@@ -7,7 +7,7 @@ disable_current_tag_swap = false
 disable_window_snap = true
 focus_behaviour = "ClickTo" # Can be Sloppy, ClickTo, or Driven
 focus_new_windows = true
-max_window_width = 0.95
+max_window_width = 1.0
 
 layout_mode = "Workspace"
 
@@ -20,6 +20,22 @@ x = 0.10
 y = 0.10
 height = 0.7
 width = 0.8
+
+[[scratchpad]]
+name = "Dictionary" # This is the name which is referenced when calling (case-sensitive)
+value = 'chromium --new-window "https://m.youdao.com/m/"' # The command to load the applecatin if it isn't started
+# x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
+# These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
+x = 0.70
+y = 0.10
+height = 0.8
+width = 0.2
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Dictionary" # Name set for the scratchpad
+modifier = ["modkey"]
+key = "i"
 
 [[keybind]]
 command = "RotateTag"
