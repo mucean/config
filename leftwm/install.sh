@@ -12,7 +12,7 @@ fi
 
 dir=$(pwd)
 
-if [ ! -e "$dir/config.toml" ]; then
+if [ -e "$dir/config.toml" ]; then
     ln -s "$dir/config.toml" "$confDir/config.toml"
 fi
 
