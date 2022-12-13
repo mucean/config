@@ -125,7 +125,7 @@ if PluginLoaded("auto-pairs")
     let g:AutoPairsFlyMode = 1
     let g:AutoPairsMapCh = 0
     au FileType php let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})
-    au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'}, ['{''}'])
+    au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->', '{' : '}'})
     au FileType rust let b:AutoPairs = AutoPairsDefine({'\w\zs<': '>'})
     if has("osx")
         let g:AutoPairsShortcutToggle = 'π' " <m-p>
