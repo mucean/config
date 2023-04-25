@@ -5,7 +5,7 @@ set -e
 source "$HOME/.common-shell/preload.sh"
 
 if [[ ! -f "$HOME/.tmux/plugins/tpm/tpm" ]]; then
-    if cmd_exist "git"; then
+    if ! cmd_exist "git"; then
         echo "git command is not found"
         exit 1
     fi

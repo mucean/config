@@ -13,7 +13,7 @@ set backspace=indent,eol,start
 set encoding=utf-8                                    "设置gvim内部编码
 set fileencoding=utf-8                                "设置当前文件编码
 set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     "设置支持打开的文
-"set termguicolors
+set termguicolors
 
 inoremap <C-H> <LEFT>
 inoremap <C-J> <DOWN>

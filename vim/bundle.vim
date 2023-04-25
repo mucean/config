@@ -42,7 +42,8 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'nordtheme/vim'
 
 Plug 'tpope/vim-fugitive'
 
@@ -158,3 +159,5 @@ if PluginLoaded("vim-lexical")
     augroup END
     let g:lexical#spell = 1         " 0=disabled, 1=enabled
 endif
+
+colorscheme nord

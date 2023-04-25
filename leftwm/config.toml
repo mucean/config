@@ -23,8 +23,7 @@ width = 0.8
 
 [[scratchpad]]
 name = "Dictionary" # This is the name which is referenced when calling (case-sensitive)
-#value = 'chromium --new-window "https://m.youdao.com/m/"' # The command to load the applecatin if it isn't started
-value = 'chromium --new-window "https://m.youdao.com/dict?le=eng"' # The command to load the applecatin if it isn't started
+value = 'chromium --new-window "https://m.youdao.com/m/"' # The command to load the applecatin if it isn't started
 # x, y, width, height are in pixels when an integer is inputted or a percentage when a float is inputted.
 # These values are relative to the size of the workspace, and will be restricted depending on the workspace size.
 x = 0.65
