@@ -12,8 +12,8 @@ fi
 
 dir=$(pwd)
 
-if [ -e "$dir/config.toml" ]; then
-    ln -s "$dir/config.toml" "$confDir/config.toml"
+if [ -e "$dir/config.ron" ]; then
+    ln -s "$dir/config.ron" "$confDir/config.ron"
 fi
 
 if [ ! -e "$confThemeDir/current" ]; then
