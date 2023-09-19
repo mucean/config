@@ -6,6 +6,8 @@
 --   command = "tabdo wincmd =",
 -- })
 
+vim.opt.whichwrap = "b,s"
+
 local api = vim.api
 
 local function settab(num)
