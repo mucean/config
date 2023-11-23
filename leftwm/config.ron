@@ -25,8 +25,8 @@
     ],
     max_window_width: None,
     layouts: [
-        MainAndVertStack,
-        Monocle,
+        "MainAndVertStack",
+        "Monocle",
         // MainAndHorizontalStack,
         // RightWiderLeftStack,
         // LeftWiderRightStack,
@@ -35,7 +35,7 @@
     insert_behavior: Bottom,
     scratchpad: [
         (name: "Alacritty", value: "alacritty", x: 0.1, y: 0.1, height: 0.8, width: 0.8),
-        (name: "Dictionary", value: "chromium --new-window "https://m.youdao.com/m/"", x: 0.65, y: 0.05, height: 0.9, width: 0.1),
+        (name: "Dictionary", value: "chromium --new-window 'https://m.youdao.com/m/'", x: 0.65, y: 0.05, height: 0.9, width: 0.1),
     ],
     window_rules: [],
     disable_current_tag_swap: false,
