@@ -22,6 +22,21 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    "simrat39/rust-tools.nvim",
+    dependencies = {
+      {
+        "neovim/nvim-lspconfig",
+      },
+    },
+    ft = "rust",
+    config = function()
+      local rt = require "rust-tools"
+
+      rt.setup({})
+    end,
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
