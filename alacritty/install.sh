@@ -11,7 +11,7 @@ if ! mkdir -p "$HOME/.config/alacritty"; then
 fi
 
 dir="$(pwd)"
-if ! ln -s "$dir/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"; then
+if ! ln -s "$dir/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"; then
     echo "install config file failed"
     exit 1
 fi
