@@ -9,9 +9,9 @@ for p in $my_path;
     end
 end
 
-if status is-login
-    exec bash -c "test -e /etc/profile && source /etc/profile;\
-    exec fish"
-end
+# if status is-login
+#     exec bash -c "test -e /etc/profile && source /etc/profile;\
+#     exec fish"
+# end
 
 bind \cf forward-word

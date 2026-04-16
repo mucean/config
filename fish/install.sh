@@ -19,5 +19,5 @@ fi
 cat base.fish >> config.fish
 
 if [ -f "./local_after.fish" ]; then
-    cat "./local.after.fish" >> config.fish
+    cat "./local_after.fish" >> config.fish
 fi
