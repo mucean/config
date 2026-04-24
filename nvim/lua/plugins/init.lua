@@ -15,6 +15,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    tag = "v0.10.0",
     opts = {
       ensure_installed = {
         "vim",
@@ -92,8 +93,8 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
-    lazy = false, -- This plugin is already lazy
+    version = "^9", -- Recommended
+    lazy = false,   -- This plugin is already lazy
   },
 
   {
@@ -115,10 +116,10 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
+      { "zbirenbaum/copilot.lua" },                   -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
     },
-    build = "make tiktoken", -- Only on MacOS or Linux
+    build = "make tiktoken",                          -- Only on MacOS or Linux
     lazy = false,
     opts = {},
   },
