@@ -15,29 +15,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.10.0",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "c",
-        "markdown",
-        "markdown_inline",
-        --golang
-        "go",
-        "gomod",
-        "gowork",
-        --python
-        "python",
-        --rust
-        "rust",
-      },
-    },
+    version = false, -- use master version
   },
 
   {
