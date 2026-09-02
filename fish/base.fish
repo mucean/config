@@ -1,7 +1,5 @@
 
-set my_path \
-$my_path \
-"$HOME/.cargo/bin" \
+#set my_path $my_path "$HOME/.cargo/bin"
 
 for p in $my_path;
     if test -d "$p"
@@ -9,9 +7,8 @@ for p in $my_path;
     end
 end
 
-# if status is-login
-#     exec bash -c "test -e /etc/profile && source /etc/profile;\
-#     exec fish"
-# end
+if test -f "$HOME/.cargo/env.fish"
+    source $HOME/.cargo/env.fish
+end
 
 bind \cf forward-word
